@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 Subjects</title>
+    <style>
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('/static/img.jpg'); /* Replace with your actual image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 30px;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.063);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            margin-top: 80px;
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        section {
+            background: rgba(240, 240, 240, 1);
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            background: rgba(230, 230, 230, 1);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .subject-button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .subject-button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .subject-button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>Class 10 Subjects</header>
+
+    <div class="container">
+        <!-- Maths Section -->
+        <section id="maths">
+            <a href="#maths-content" class="subject-button">Mathematics</a>
+            <p id="maths-content">
+                Explore advanced concepts in algebra, geometry, trigonometry, and statistics. Solve problems related to quadratic equations, circles, and probability.
+            </p>
+        </section>
+
+        <!-- Science Section -->
+        <section id="science">
+            <a href="#science-content" class="subject-button">Science</a>
+            <p id="science-content">
+                Dive into topics like physics (motion, force, and energy), chemistry (chemical reactions and acids/bases), and biology (cell structure and human physiology).
+            </p>
+        </section>
+
+        <!-- History Section -->
+        <section id="history">
+            <a href="#history-content" class="subject-button">History</a>
+            <p id="history-content">
+                Study ancient civilizations, medieval history, and modern world events. Learn about revolutions, wars, and influential leaders who shaped the world.
+            </p>
+        </section>
+
+        <!-- Geography Section -->
+        <section id="geography">
+            <a href="#geography-content" class="subject-button">Geography</a>
+            <p id="geography-content">
+                Understand the Earth's physical features, climate patterns, natural resources, and population dynamics. Explore maps and environmental issues.
+            </p>
+        </section>
+
+        <!-- English Section -->
+        <section id="english">
+            <a href="#english-content" class="subject-button">English</a>
+            <p id="english-content">
+                Improve your reading, writing, and comprehension skills. Study grammar rules, literature, and creative writing techniques.
+            </p>
+        </section>
+
+        <!-- Bengali Section -->
+        <section id="bengali">
+            <a href="#bengali-content" class="subject-button">Bengali</a>
+            <p id="bengali-content">
+                Learn the rich language of Bengali through grammar, literature, and cultural studies. Explore famous works by renowned Bengali authors.
+            </p>
+        </section>
+
+        <a href="{% url 'class_home' %}" class="back-button">⬅️ Back to All Classes</a>
+
+        <footer>
+            &copy; ABC High School| All Rights Reserved
+        </footer>
+    </div>
+
+</body>
+</html>

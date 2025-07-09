@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Classes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+    font-family: 'Arial', sans-serif;
+    background: url('/static/bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .btn-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .btn {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn:hover {
+            background: #388e3c;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your Class</h1>
+        <div class="btn-container">
+            <a href="{% url 'class_8' %}" class="btn">Class 8</a>
+            <a href="{% url 'class_9' %}" class="btn">Class 9</a>
+            <a href="{% url 'class_10' %}" class="btn">Class 10</a>
+            <a href="{% url 'class_11' %}" class="btn">Class 11</a>
+            <a href="{% url 'class_12' %}" class="btn">Class 12</a>
+        </div>
+    </div>
+</body>
+</html>

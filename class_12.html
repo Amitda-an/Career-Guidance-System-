@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 12 Subjects</title>
+    <style>
+        /* Basic Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('image.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(0, 51, 102, 0.85); 
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tab-button {
+            background-color: rgba(0, 102, 204, 0.85);
+            color: white;
+            font-size: 1rem;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .tab-button.active, .tab-button:hover {
+            background-color: #00cc66;
+            transform: translateY(-3px);
+        }
+
+        .tab-content {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #004080;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .subject-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 0;
+        }
+
+        .subject-list li {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
+            color: #003366;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .subject-list li:hover {
+            background-color: #00cc66;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: rgba(0, 51, 102, 0.9);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* Back button */
+        .btn {
+            display: inline-block;
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 20px auto;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00cc66;
+            transform: translateY(-3px);
+        }
+
+        .back-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .tab-button {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .tab-container {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Welcome to Class 12 Subjects
+</header>
+
+<div class="tab-container">
+    <button class="tab-button active" onclick="openTab('science', event)">Science</button>
+    <button class="tab-button" onclick="openTab('commerce', event)">Commerce</button>
+    <button class="tab-button" onclick="openTab('arts', event)">Arts</button>
+</div>
+
+<!-- Science Tab -->
+<div id="science" class="tab-content active">
+    <h2>Science Stream</h2>
+    <ul class="subject-list">
+        <li>Physics</li>
+        <li>Chemistry</li>
+        <li>Biology</li>
+        <li>Computer Science</li>
+        <li>Mathematics</li>
+        <li>English</li>
+    </ul>
+</div>
+
+<!-- Commerce Tab -->
+<div id="commerce" class="tab-content">
+    <h2>Commerce Stream</h2>
+    <ul class="subject-list">
+        <li>Economics</li>
+        <li>Accountancy</li>
+        <li>Business Studies</li>
+        <li>Mathematics</li>
+        <li>English</li>
+    </ul>
+</div>
+
+<!-- Arts Tab -->
+<div id="arts" class="tab-content">
+    <h2>Arts Stream</h2>
+    <ul class="subject-list">
+        <li>English</li>
+        <li>Philosophy</li>
+        <li>History</li>
+        <li>Political Science</li>
+        <li>Geography</li>
+    </ul>
+</div>
+
+<div class="back-btn-container">
+    <a href="{% url 'class_home' %}" class="btn">Back to all classes</a>
+</div>
+
+<footer>
+    © ABC High School. All rights reserved.
+</footer>
+
+<script>
+    function openTab(tabName, event) {
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(button => button.classList.remove('active'));
+
+        document.getElementById(tabName).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
